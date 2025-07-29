@@ -57,8 +57,35 @@ A lightweight Flask web app to help users **track their income, expenses, and fi
 ├── README.md # This file
 └── .gitignore
 
-##Sample Data
+---
+## ⚙️ Installation
 
-Email: user1@example.com   →  user20@example.com
-Password: (no password required, just email-based login if implemented)
+```bash
+git clone https://github.com//finance-tracker.git
+cd finance-tracker
+pip install -r requirements.txt
+python seed.py  # Optional: adds sample users/data
+flask run
+Then open: http://localhost:5000
+
+##🧪 Sample Login
+Use any of these pre-seeded emails (no password needed):
+user1@example
+
+##📌 Todo / Future Ideas
+Add user registration + hashed passwords
+
+Export transactions to CSV
+
+Add dark mode 🌑
+
+Connect to PostgreSQL for production
+
+##🧑‍💻 Author
+Made by Kiyo – Built with love, Flask, and some ✨ late-night energy
+Wanna collab or learn more? GitHub Profile
+
+
+
+
 
