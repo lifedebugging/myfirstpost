@@ -57,7 +57,8 @@ A lightweight Flask web app to help users **track their income, expenses, and fi
 ├── README.md # This file
 └── .gitignore
 
-##Sample Data## 
+##Sample Data
+
 Email: user1@example.com   →  user20@example.com
 Password: (no password required, just email-based login if implemented)
 
