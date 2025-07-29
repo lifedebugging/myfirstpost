@@ -64,7 +64,6 @@ A lightweight Flask web app to help users **track their income, expenses, and fi
 git clone https://github.com/lifedebugging/finance-tracker.git
 cd finance-tracker
 pip install -r requirements.txt
-python seed.py  # Optional: adds sample users/data
 flask run
 ```
 Then open: http://localhost:5000
