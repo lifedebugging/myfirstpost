@@ -1,16 +1,53 @@
-# myfirstpost
-Hello there,All my projects/Researches/Experiment will be posted here
+# 🧾 FinTrack – Personal Finance Tracker
 
-2025 I will be  starting a 10 days 5 project challenge. The project ideas are my own I will be taking help of onlne resources in cased of need.
+A lightweight Flask web app to help users **track their income, expenses, and financial goals** — all in one place. Includes dynamic charts, real-time goal progress, and a dashboard UI.
 
-## 10 Days, 5 Projects Challenge 🚀
+---
 
-### Progress Tracker
-- [ ] **Project 1**: Old Computer Parts Selling Web App (CRUD basics).  
-- [ ] **Project 2**: Anonymous Restaurant Rating App (basic reviews system).
-- [ ] **Project 3**: Library Data Analysis (data science practice).
-- [ ] **Project 4**: AI Story Generator ( AI project).
-- [ ] **Project 5**: AI-Powered YouTube Video Summarizer (AI project).
+## 🚀 Features
 
-### Updates
-I'll update this repo daily with my progress, learning, and any challenges faced.  
+- 📊 **Dashboard Overview**: Track income, expenses, and net balance
+- 📅 **Monthly Summary**: Bar chart for earned vs spent across months
+- 🥧 **Category Breakdown**: Pie chart showing spending by category
+- 🧾 **Add Transactions**: Record income or expenses with descriptions
+- 🎯 **Set Financial Goals**: Track goal progress with target and deadlines
+- 🧠 **Data Analysis**: Backed by Python logic & matplotlib visualizations
+- 🔐 **Login System**: Simple login using email (for now)
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer        | Tool               |
+|--------------|--------------------|
+| Backend      | Python (Flask)     |
+| Frontend     | HTML5, CSS3        |
+| Database     | SQLite3            |
+| Charts       | Matplotlib (image encoded) |
+| Data Utils   | Pandas, io, base64 |
+
+---
+
+## 📷 Screenshots
+
+*(Add screenshots if you want — dashboard, charts, etc.)*
+
+---
+
+## 📁 Folder Structure
+│
+├── app.py # Main Flask app
+├── db.py # DB setup and queries
+├── models.py # Data classes: User, Transaction, Goal
+├── utils/
+│ └── analysis.py # All business logic and chart generators
+├── templates/ # HTML views
+│ ├── dashboard.html
+│ ├── add_transaction.html
+│ └── login.html
+├── static/
+│ └── style.css # App styling
+├── seed.py # Script to add sample users and data
+├── requirements.txt # All dependencies
+├── README.md # This file
+└── .gitignore
