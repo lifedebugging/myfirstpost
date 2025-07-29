@@ -78,7 +78,7 @@ user1@example
 
 ##📌 Todo / Future Ideas
 
-Add user registration + hashed passwords
+Add hashed passwords
 
 Export transactions to CSV
 
