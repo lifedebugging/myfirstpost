@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Transaction - FinTrack</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">FinTrack</div>
+        </nav>
+    </header> 
+    <main>
+        <section class="transaction-section">
+            <h2>Add Transaction</h2>
+            {% if message %}
+                <p class="success-message">{{ message }}</p>
+            {% endif %}
+            <form action="/add_transaction" method="POST">
+                <div class="form-group">
+                    <label for="type">Transaction Type:</label>
+                    <select name="type" id="type" required>
+                        <option value="" selected disabled>Select type</option>
+                        <option value="Income">Income</option>
+                        <option value="Expense">Expense</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount:</label>
+                    <input type="number" step="0.01" name="amount" id="amount" required>
+                </div>
+                <div class="form-group">
+                    <label for="category">Category:</label>
+                    <select name="category" id="category" required>
+                        <option value="" selected disabled>Select category</option>
+                        <option value="food">Food</option>
+                        <option value="rent">Rent</option>
+                        <option value="income">Income</option>
+                        <option value="travel">Travel</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="education">Education</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date:</label>
+                    <input type="date" name="date" id="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea name="description" id="description"></textarea>
+                </div>
+                <h2>Add Goal</h2>
+                <div class="form-group">
+                    <label for = "goal">Goal Title</label>
+                    <input type="text" name="title">
+                </div>
+                <div class="form-group">
+                     <label for="target">Target amount</label>
+                     <input type="number" name="target">
+                </div>
+                <div class="form-group">
+                    <label for="deadline">Deadline</label>
+                    <input type="date" name="deadline">
+                </div>
+                <button type="submit" class="btn">submit</button>
+            </form>
+            <div class="form-link">
+                <a href="/dashboard" class="btn">Go to Dashboard</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 FinTrack. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

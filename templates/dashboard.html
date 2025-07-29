@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - FinTrack</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">FinTrack</div>
+            <ul class="nav-links">
+                <li><a href="/dashboard" class="active">Dashboard</a></li>
+                <li><a href="/add_transaction">Add Transaction</a></li>
+                <li><a href="#">Budgets</a></li>
+                <li><a href="#">Reports</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="dashboard-overview">
+            <h2>Dashboard</h2>
+            <p class="subtitle">Overview of your financial health</p>
+            <div class="summary-cards-container">
+                <div class="income-card">
+                    <h3>Total Income</h3>
+                    <p class="value">${{ analysis.total_earned }}</p>
+                </div>
+                <div class="expense-card">
+                    <h3>Total Expenses</h3>
+                    <p class="value">${{ analysis.total_spent }}</p>
+                </div>
+                <div class="net-balance-card">
+                    <h3>Net Balance</h3>
+                    <p class="value">${{ analysis.net_balance }}</p>
+                </div>
+                {% if analysis.net_balance < 0 %}
+                <p class="warning-message">⚠️ You are spending more than you earn. Consider reviewing your expenses.</p>
+    {% endif %}
+
+            </div>
+        </section>
+        
+        <section class="Spending-overview">
+            <h2>Spending Overview</h2>
+            <div class="chart-container">
+                <div class="chart-area" id="monthly-summary">
+                    <h3>Monthly Spending</h3>
+                    <img src="data:image/png;base64,{{ monthly_chart }}" alt="Monthly Spending Chart"/>
+                </div>
+                <div class="chart-area" id="category-expenses">
+                    <h3>Expenses by Category</h3>
+                    <img src="data:image/png;base64,{{ category_chart }}" alt="Category Expenses Chart"/>
+                </div>
+            </div>
+        </section>
+        <section class="recent-transactions">
+            <h2>Recent Transactions</h2>
+            <table class="transactions-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for tx in recent_transactions %}
+                    <tr>
+                        <td>{{ tx.date }}</td>
+                        <td>{{ tx.category }}</td>
+                        <td>${{ "%.2f"|format(tx.amount) }}</td>
+                        <td>{{ tx.description or 'N/A' }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+        <section class="financial-goals">
+            <h2>Your Financial Goals</h2>
+            <div class="goals-container">
+                {% for goal in analysis.goals %}
+                <div class="goal-card">
+                    <h3>Goal Title: {{ goal.title }}</h3>
+                    <p><strong>Target Amount:</strong> ${{ goal.target }}</p>
+                    <p><strong>Deadline:</strong> {{ goal.deadline }}</p>
+                    <p><strong>Current Amount:</strong> ${{ goal.current }}</p>
+                    <p><strong>Progress:</strong> {{ goal.progress }}%</p>
+                    <p><strong>Status:</strong> {{ goal.status }}</p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: {{ goal.progress }}%;"></div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 FinTrack. All rights reserved.</p>
+    </footer>
+</body>
+</html>
