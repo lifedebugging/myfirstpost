@@ -89,8 +89,8 @@ Connect to PostgreSQL for production
 ---
 
 ##🧑‍💻 Author
-Made by snippet_cow – Built with love, Flask, and some ✨ late-night energy
-Wanna collab or learn more? GitHub Profile
+Made by snippet_cow – Built with love, Flask, and some late-night energy
+Wanna collab or learn more? https://github.com/lifedebugging?tab=overview&from=2025-06-01&to=2025-06-30
 
 
 
