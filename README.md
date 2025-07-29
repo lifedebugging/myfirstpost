@@ -29,8 +29,13 @@ A lightweight Flask web app to help users **track their income, expenses, and fi
 ---
 
 ## 📷 Screenshots
+<img width="1339" height="593" alt="image" src="https://github.com/user-attachments/assets/e6527078-5c0f-483c-bbad-ed1f9db7a00d" />
+<img width="1344" height="586" alt="image" src="https://github.com/user-attachments/assets/deed562f-264d-43d0-ba1a-19a53e3a903f" />
+<img width="1336" height="596" alt="image" src="https://github.com/user-attachments/assets/b1855959-17f3-4297-af83-3f3a8d5ad527" />
+<img width="1339" height="592" alt="image" src="https://github.com/user-attachments/assets/f2f80fc1-55d6-443a-8a55-af3c4d0ec011" />
 
-*(Add screenshots if you want — dashboard, charts, etc.)*
+
+
 
 ---
 
@@ -51,3 +56,8 @@ A lightweight Flask web app to help users **track their income, expenses, and fi
 ├── requirements.txt # All dependencies
 ├── README.md # This file
 └── .gitignore
+
+##Sample Data## 
+Email: user1@example.com   →  user20@example.com
+Password: (no password required, just email-based login if implemented)
+
